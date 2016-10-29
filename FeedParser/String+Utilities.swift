@@ -2,8 +2,8 @@
 //  String+Utilities.swift
 //  FeedParser
 //
-//  Created by Ignacio Nieto Carvajal on 9/10/16.
-//  Copyright © 2016 Ignacio Nieto Carvajal. All rights reserved.
+//  Created by illyabbi on 9/10/16.
+//  Copyright © 2016 illyabbi. All rights reserved.
 //
 
 import Foundation

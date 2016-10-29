@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TwitterKit
 
 
 
@@ -40,35 +39,24 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var logInButton: UIButton!
     
-    @IBOutlet weak var twitterButton: UIButton!
     // entries and parser
     var parser: FeedParser?
     var entries: [FeedItem]?
+
+    // rss records from ListViewController.swift
+    var rssRecordList : [FeedItem] = [FeedItem]()
+    var rssRecord : FeedParser?
+    var isTagFound = [ "item": false , "title":false, "pubDate": false , "thumbnail": false , "link":false]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TWITTER LOGIN
-        let logInButton = TWTRLogInButton { (session, error) in
-            if let unwrappedSession = session {
-                let alert = UIAlertController(title: "Logged In",
-                                              message: "User \(unwrappedSession.userName) has logged in",
-                    preferredStyle: UIAlertControllerStyle.alert
-                )
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                NSLog("Login error: %@", error!.localizedDescription);
-            }
-        }
-        
-        // TODO: Change where the log in button is positioned in your view
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
+        //copied from ListViewController.swift
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
 
-        
         // initialization
         entries = []
     }
@@ -252,6 +240,37 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         }
         return nil
     }
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "segueShowDetails" {
+            
+            // find index path for selected row
+            let selectedIndexPath : [NSIndexPath] = self.tableView.indexPathsForSelectedRows! as [NSIndexPath]
+            
+            // deselect the selected row
+            self.tableView.deselectRow(at: selectedIndexPath[0] as IndexPath, animated: true)
+            
+            // create destination view controller
+            let destVc = segue.destination as! DetailsViewController
+            
+            // set title for next screen
+            destVc.navigationItem.title = self.rssRecordList[selectedIndexPath[0].row].feedTitle
+            
+            // set link value for destination view controller
+            destVc.link = self.entries?[selectedIndexPath[0].row].feedLink
+            
+        }
+        
+    }
+    
+
+    
     
 }
 

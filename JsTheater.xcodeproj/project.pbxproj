@@ -24,6 +24,10 @@
 		B64A9D261DC178F900044AE3 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64A9D221DC178F900044AE3 /* TwitterKit.framework */; };
 		B64A9D271DC178F900044AE3 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B64A9D231DC178F900044AE3 /* TwitterKitResources.bundle */; };
 		B64A9D281DC178F900044AE3 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64A9D241DC178F900044AE3 /* TwitterCore.framework */; };
+		B64A9D2E1DC50EBD00044AE3 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A9D2D1DC50EBD00044AE3 /* Twitter.swift */; };
+		B671FF561DC5234600F0967B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B671FF551DC5234600F0967B /* ListViewController.swift */; };
+		B671FF581DC5235200F0967B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B671FF571DC5235200F0967B /* DetailsViewController.swift */; };
+		B671FF5A1DC542A000F0967B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B671FF591DC542A000F0967B /* Common.swift */; };
 		B6AF94621DBD67D600EB4CB8 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF94611DBD67D600EB4CB8 /* About.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,10 @@
 		B64A9D221DC178F900044AE3 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		B64A9D231DC178F900044AE3 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		B64A9D241DC178F900044AE3 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		B64A9D2D1DC50EBD00044AE3 /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		B671FF551DC5234600F0967B /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B671FF571DC5235200F0967B /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B671FF591DC542A000F0967B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B6AF94611DBD67D600EB4CB8 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,10 +163,14 @@
 		66256F711A3C60D000801DC6 /* Views, Controllers & Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				66256F4A1A3C5E2300801DC6 /* AppDelegate.swift */,
-				66256F4C1A3C5E2300801DC6 /* ViewController.swift */,
 				66256F4E1A3C5E2300801DC6 /* Main.storyboard */,
+				66256F4A1A3C5E2300801DC6 /* AppDelegate.swift */,
+				B671FF591DC542A000F0967B /* Common.swift */,
+				66256F4C1A3C5E2300801DC6 /* ViewController.swift */,
 				B6AF94611DBD67D600EB4CB8 /* About.swift */,
+				B64A9D2D1DC50EBD00044AE3 /* Twitter.swift */,
+				B671FF551DC5234600F0967B /* ListViewController.swift */,
+				B671FF571DC5235200F0967B /* DetailsViewController.swift */,
 				66256F511A3C5E2300801DC6 /* Images.xcassets */,
 				66256F531A3C5E2300801DC6 /* LaunchScreen.xib */,
 			);
@@ -300,13 +312,17 @@
 			files = (
 				66256F6E1A3C60BD00801DC6 /* FeedItem.swift in Sources */,
 				66256F4D1A3C5E2300801DC6 /* ViewController.swift in Sources */,
+				B671FF561DC5234600F0967B /* ListViewController.swift in Sources */,
 				66256F781A3C61A700801DC6 /* String+RemoveHTMLCharacters.swift in Sources */,
 				66256F6D1A3C60BD00801DC6 /* FeedChannel.swift in Sources */,
 				66256F4B1A3C5E2300801DC6 /* AppDelegate.swift in Sources */,
+				B671FF5A1DC542A000F0967B /* Common.swift in Sources */,
 				B6AF94621DBD67D600EB4CB8 /* About.swift in Sources */,
 				66256F7A1A3C6AD200801DC6 /* NSDate+FeedsDate.swift in Sources */,
 				66256F731A3C610900801DC6 /* FeedEnclosure.swift in Sources */,
 				661997771DAA462E00580CE5 /* String+Utilities.swift in Sources */,
+				B64A9D2E1DC50EBD00044AE3 /* Twitter.swift in Sources */,
+				B671FF581DC5235200F0967B /* DetailsViewController.swift in Sources */,
 				66256F6F1A3C60BD00801DC6 /* FeedParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
